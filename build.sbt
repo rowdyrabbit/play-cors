@@ -1,6 +1,6 @@
 name := "play-cors"
 
-organization := "be.cafeba"
+organization := "cafebabe"
 
 version := "1.0-SNAPSHOT"
 
@@ -20,7 +20,7 @@ parallelExecution in Test := false
 testOptions += Tests.Argument(TestFrameworks.JUnit, "-q", "-v")
 
 publishTo <<= (version) { version: String =>
-  val nexus = "https://private-repo.typesafe.com/typesafe/"
+  val nexus = "http://rowdyrabbit.github.io/play-cors/"
   if (version.trim.endsWith("SNAPSHOT")) Some("snapshots" at nexus + "maven-snapshots/")
   else                                   Some("releases"  at nexus + "maven-releases/")
 }
