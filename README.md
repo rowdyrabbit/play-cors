@@ -30,11 +30,11 @@ All other HTTP requests:
 
 You can override any of the above by adding any of the following properties to your `application.conf` file:
 
-    * cors.methods.allowed
-    * cors.headers.allowed
-    * cors.access_control_allow_origin
-    * cors.expose_headers
-    * cors.allow
+* cors.methods.allowed
+* cors.headers.allowed
+* cors.access_control_allow_origin
+* cors.expose_headers
+* cors.allow
 
 
 
