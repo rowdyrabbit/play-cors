@@ -1,6 +1,6 @@
 name := "play-cors"
 
-organization := "be.cafeba.play.plugins"
+organization := "be.cafeba"
 
 version := "1.0-SNAPSHOT"
 
