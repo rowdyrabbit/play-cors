@@ -4,7 +4,8 @@ This plugin adds [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_shari
 
 # Features
 
-###  Provides a pre-flight OPTIONS response for all requests to the application. Provides a Play filter which appends the required CORS headers to every HTTP request.
+* Provides a pre-flight OPTIONS response for all requests to the application. 
+* Provides a Play filter which appends the required CORS headers to every HTTP request.
 
 #### Configurable
 
