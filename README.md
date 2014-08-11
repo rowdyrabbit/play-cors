@@ -9,10 +9,9 @@ This plugin adds [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_shari
 
 #### Configurable
 
+Configure any of the HTTP headers you might need. The defaults are:
 
-* Configure any of the HTTP headers you might need. The defaults are:
-
-Preflight requests:
+**Preflight requests:**
 ```
 "Access-Control-Allow-Origin" -> "*",
 "Access-Control-Expose-Headers" -> "WWW-Authenticate, Server-Authorization",
@@ -20,7 +19,7 @@ Preflight requests:
 "Access-Control-Allow-Headers" -> "x-requested-with,content-type,Cache-Control,Pragma,Date")
 ```
 
-All other HTTP requests:
+**All other HTTP requests:**
 ```
 "Access-Control-Allow-Origin" -> "*",
 "Allow" -> "*",
