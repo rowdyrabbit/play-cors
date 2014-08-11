@@ -23,14 +23,6 @@ All other HTTP requests:
 "Access-Control-Allow-Methods" -> "POST, GET, OPTIONS, PUT, DELETE",
 "Access-Control-Allow-Headers" -> "Origin, X-Requested-With, Content-Type, Accept, Referrer, User-Agent"
 
-You can override any of the above by adding any of the following properties to your `application.conf` file:
-
-    * cors.methods.allowed
-    * cors.headers.allowed
-    * cors.access_control_allow_origin
-    * cors.expose_headers
-    * cors.allow
-
 
 
 # How to install
