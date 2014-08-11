@@ -1,4 +1,5 @@
 package be.cafeba.cors.config
+import play.api.Play.current
 
 
 object ConfigReader {
@@ -6,23 +7,28 @@ object ConfigReader {
   object AccessControl {
 
     def getAllowOrigin(): (String, String) = {
-      "Access-Control-Allow-Origin" -> "*"
+      lazy val allowOrigin = current.configuration.getString("cors.allow_origin").getOrElse("*")
+      "Access-Control-Allow-Origin" -> allowOrigin
     }
 
     def getExposedHeaders(): (String, String) = {
-      "Access-Control-Expose-Headers" -> "WWW-Authenticate, Server-Authorization"
+      lazy val exposeHeaders = current.configuration.getString("cors.expose_headers").getOrElse("WWW-Authenticate, Server-Authorization")
+      "Access-Control-Expose-Headers" -> exposeHeaders
     }
 
     def getAllowMethods(): (String, String) = {
-      "Access-Control-Allow-Methods" -> "POST, GET, OPTIONS, PUT, DELETE"
+      lazy val allowMethods = current.configuration.getString("cors.methods.allowed").getOrElse("POST, GET, OPTIONS, PUT, DELETE")
+      "Access-Control-Allow-Methods" -> allowMethods
     }
 
     def getAllowHeaders(): (String, String) = {
-      "Access-Control-Allow-Headers" -> "x-requested-with,content-type,Cache-Control,Pragma,Date"
+      lazy val headersAllowed = current.configuration.getString("cors.headers.allowed").getOrElse("x-requested-with,content-type,Cache-Control,Pragma,Date")
+      "Access-Control-Allow-Headers" -> headersAllowed
     }
 
     def getAllow(): (String, String) = {
-      "Allow" -> "*"
+      lazy val allow = current.configuration.getString("cors.allow").getOrElse("*")
+      "Allow" -> allow
     }
   }
 
