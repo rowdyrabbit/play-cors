@@ -15,7 +15,7 @@ publishArtifact in Test := false
 pomIncludeRepository := { x => false }
 
 pomExtra := (
-  <url>http://www.cakesolutions.org/specs2-spring.html</url>
+  <url>https://github.com/rowdyrabbit/play-cors</url>
   <licenses>
     <license>
       <name>MIT License</name>
