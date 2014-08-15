@@ -2,7 +2,7 @@ name := "play-cors"
 
 organization := "be.cafeba"
 
-version := "1.0-SNAPSHOT"
+version := "1.0"
 
 scalaVersion := "2.11.1"
 
@@ -18,8 +18,8 @@ pomExtra := (
   <url>http://www.cakesolutions.org/specs2-spring.html</url>
   <licenses>
     <license>
-      <name>BSD-style</name>
-      <url>http://www.opensource.org/licenses/bsd-license.php</url>
+      <name>MIT License</name>
+      <url>http://opensource.org/licenses/MIT</url>
       <distribution>repo</distribution>
     </license>
   </licenses>
