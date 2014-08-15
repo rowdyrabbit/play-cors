@@ -2,7 +2,7 @@ name := "play-cors"
 
 organization := "be.cafeba"
 
-version := "1.1-SNAPSHOT"
+version := "1.0"
 
 scalaVersion := "2.11.1"
 
