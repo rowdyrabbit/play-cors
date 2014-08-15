@@ -1,13 +1,40 @@
 name := "play-cors"
 
-organization := "cafebabe"
+organization := "be.cafeba"
 
 version := "1.0-SNAPSHOT"
-
 
 scalaVersion := "2.11.1"
 
 crossScalaVersions := Seq("2.11.1", "2.10.4")
+
+publishMavenStyle := true
+
+publishArtifact in Test := false
+
+pomIncludeRepository := { x => false }
+
+pomExtra := (
+  <url>http://www.cakesolutions.org/specs2-spring.html</url>
+  <licenses>
+    <license>
+      <name>BSD-style</name>
+      <url>http://www.opensource.org/licenses/bsd-license.php</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+   <url>git@github.com:rowdyrabbit/play-cors.git</url>
+    <connection>scm:git:git@github.com:rowdyrabbit/play-cors.git</connection>
+  </scm>
+  <developers>
+    <developer>
+      <id>rowdyrabbit</id>
+      <name>Denise Fernandez</name>
+      <url>http://cafeba.be</url>
+    </developer>
+  </developers>
+  )
 
 libraryDependencies ++= Seq(
   "com.typesafe.play" %% "play" % "2.3.0" % "provided",
@@ -20,9 +47,9 @@ parallelExecution in Test := false
 testOptions += Tests.Argument(TestFrameworks.JUnit, "-q", "-v")
 
 publishTo <<= (version) { version: String =>
-  val nexus = "http://rowdyrabbit.github.io/play-cors/"
-  if (version.trim.endsWith("SNAPSHOT")) Some("snapshots" at nexus + "maven-snapshots/")
-  else                                   Some("releases"  at nexus + "maven-releases/")
+  val nexus = "https://oss.sonatype.org/"
+  if (version.trim.endsWith("SNAPSHOT")) Some("snapshots" at nexus + "content/repositories/snapshots")
+  else                                   Some("releases" at nexus + "service/local/staging/deploy/maven2")
 }
 
 javacOptions ++= Seq("-source", "1.6", "-target", "1.6", "-Xlint:unchecked", "-encoding", "UTF-8")
@@ -36,3 +63,4 @@ lazy val sample = (project in file("sample/sample-cors"))
   .settings(
     Keys.fork in Test := false
   ).dependsOn(root).aggregate(root)
+
