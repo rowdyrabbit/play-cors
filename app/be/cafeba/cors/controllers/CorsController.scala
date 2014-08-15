@@ -7,10 +7,10 @@ object CorsController extends Controller {
 
     implicit val context = scala.concurrent.ExecutionContext.Implicits.global
 
-    def preflight(all: String) = Action {
+    def preflight(all: String) = Action { implicit request =>
       Ok("").withHeaders(
         getAllow(),
-        getAllowOrigin(),
+        getAllowOrigin(request),
         getAllowMethods(),
         getAllowHeaders())
     }

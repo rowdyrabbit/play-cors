@@ -1,13 +1,16 @@
 package be.cafeba.cors.config
 import play.api.Play.current
+import play.api.mvc.RequestHeader
 
 
 object ConfigReader {
 
   object AccessControl {
 
-    def getAllowOrigin(): (String, String) = {
-      lazy val allowOrigin = current.configuration.getString("cors.allow_origin").getOrElse("*")
+    def getAllowOrigin(requestHeader: RequestHeader): (String, String) = {
+      val protocol = if (requestHeader.secure) "https://" else "http://"
+      val origin =  protocol + requestHeader.host
+      lazy val allowOrigin = current.configuration.getString("cors.allow_origin").getOrElse(origin)
       "Access-Control-Allow-Origin" -> allowOrigin
     }
 

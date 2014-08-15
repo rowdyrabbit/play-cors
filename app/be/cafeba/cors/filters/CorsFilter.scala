@@ -11,7 +11,7 @@ class CorsFilter extends EssentialFilter {
     def apply(requestHeader: RequestHeader) = {
       next(requestHeader).map { result =>
         result.withHeaders(
-          getAllowOrigin(),
+          getAllowOrigin(requestHeader),
           getAllowHeaders(),
           getAllowMethods(),
           getExposedHeaders())
