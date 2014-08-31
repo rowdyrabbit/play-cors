@@ -32,7 +32,7 @@ Configure any of the HTTP headers you might need. The defaults are:
 
 The module has been published to Maven Central: 
 
-add  ```"be.cafeba" %% "play-cors_2.11" % "1.0"``` to your dependencies in `build.sbt` or `Build.scala`, e.g. ```libraryDependencies += "be.cafeba" % "play-cors_2.11" % "1.0"```
+add  ```"be.cafeba" %% "play-cors" % "1.0"``` to your dependencies in `build.sbt` or `Build.scala`, e.g. ```libraryDependencies += "be.cafeba" %% "play-cors" % "1.0"```
 
 
 
