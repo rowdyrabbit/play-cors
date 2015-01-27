@@ -4,9 +4,9 @@ organization := "be.cafeba"
 
 version := "1.1-SNAPSHOT"
 
-scalaVersion := "2.11.1"
+scalaVersion := "2.11.5"
 
-crossScalaVersions := Seq("2.11.1", "2.10.4")
+crossScalaVersions := Seq("2.11.5", "2.10.4")
 
 publishMavenStyle := true
 
@@ -37,8 +37,10 @@ pomExtra := (
   )
 
 libraryDependencies ++= Seq(
-  "com.typesafe.play" %% "play" % "2.3.0" % "provided",
-  "com.typesafe.play"  %% "play-test" % "2.3.0" % "test"
+  "com.typesafe.play" %% "play" % "2.3.7" % "provided",
+  "com.typesafe.play" %% "play-test" % "2.3.7" % "test",
+  "org.scalatestplus" %% "play" % "1.2.0" % Test,
+  "org.scalatest" %% "scalatest"  % "2.2.3" % "test"
 )
 
 
