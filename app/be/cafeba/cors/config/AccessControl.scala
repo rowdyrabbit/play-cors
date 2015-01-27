@@ -10,7 +10,7 @@ import play.api.mvc.RequestHeader
 case class AccessControl(allowedOrigin: Option[String], allowedMethods: String, allowedHeaders: String, exposedHeaders: String) {
 
   /**
-   * Returns CORS access controll headers for a given request
+   * Returns CORS access control headers for a given request
    */
   def headers(req: RequestHeader): Seq[(String, String)] =
     Seq(
