@@ -40,7 +40,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.play" %% "play" % "2.3.7" % "provided",
   "com.typesafe.play" %% "play-test" % "2.3.7" % "test",
   "org.scalatestplus" %% "play" % "1.2.0" % Test,
-  "org.scalatest" %% "scalatest"  % "2.2.3" % "test"
+  "org.scalatest" %% "scalatest"  % "2.2.3" % Test
 )
 
 

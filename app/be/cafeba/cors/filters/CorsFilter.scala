@@ -1,22 +1,21 @@
 package be.cafeba.cors.filters
 
-import be.cafeba.cors.config.ConfigReader.AccessControl._
 import play.api.mvc._
 
 import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.Future
 
-class CorsFilter extends EssentialFilter {
-  def apply(next: EssentialAction) = new EssentialAction {
-    def apply(requestHeader: RequestHeader) = {
-      next(requestHeader).map { result =>
-        result.withHeaders(
-          allowOriginHeader(requestHeader),
-          allowHeadersHeader,
-          allowMethodsHeader,
-          exposedHeadersHeader)
-      }
+/**
+ * Filter that adds CORS headers to every request
+ */
+object CorsFilter extends Filter {
+
+  import be.cafeba.cors.config.current.AccessControl._
+
+  def apply(nextFilter: RequestHeader => Future[Result])(requestHeader: RequestHeader): Future[Result] = {
+    nextFilter(requestHeader).map { result =>
+      result.withHeaders(headers(requestHeader): _*)
     }
   }
+
 }
-
-
